@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cut : MonoBehaviour
 {
+    public CameraShaker camShaker;
+
     void Start()
     {
         
@@ -14,13 +16,12 @@ public class Cut : MonoBehaviour
         
     }
 
-    // TODO: Buraya bir şeyler yaz
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.transform.tag);
         if (collision.transform.CompareTag("CuttingZone"))
         {
             Destroy(collision.gameObject);
+            StartCoroutine(camShaker.Shake(.4f,.2f));
         }
     }
 }
