@@ -1474,12 +1474,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1080912740}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &815163765 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3805797580673908149, guid: ec15af30ed559974c9695bf66c8210a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 3805797580949787840}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &823282009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1577,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d0574524473bc64eb8aa59ba983fe53, type: 2}
+  - {fileID: 2100000, guid: a030c1fe0f872f944b7777340ec635ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2424,7 +2418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 55800687}
-  - {fileID: 815163765}
+  - {fileID: 3805797580949787841}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3804,11 +3798,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1554511396}
     m_Modifications:
-    - target: {fileID: 3805797580673908148, guid: ec15af30ed559974c9695bf66c8210a2,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn_Boundry
-      objectReference: {fileID: 0}
     - target: {fileID: 3805797580673908149, guid: ec15af30ed559974c9695bf66c8210a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3864,8 +3853,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3805797580673908148, guid: ec15af30ed559974c9695bf66c8210a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn_Boundry
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec15af30ed559974c9695bf66c8210a2, type: 3}
+--- !u!4 &3805797580949787841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3805797580949787840}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6997087326859815700
 PrefabInstance:
   m_ObjectHideFlags: 0
