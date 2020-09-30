@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject clampRight, clampLeft;
     private float minX;
     private float maxX;
+    private Vector3 rotationSpeed = new Vector3(10f,0,0);
 
     private float dif;
 
@@ -23,8 +24,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         followMouse();
+        rotate();
     }
 
+
+    private void rotate()
+    {
+        transform.Rotate(rotationSpeed);
+    }
     private void initBoundaries()
     {
         float sawWidth = saw.GetComponent<MeshRenderer>().bounds.size.x;
