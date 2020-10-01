@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LogSpawner : MonoBehaviour
 {
-
+    [SerializeField] private float logSpawnInterval;
     private IEnumerator coroutine;
+
+
     public int logCount;
     public GameObject[] logList;
     public Texture[] textureList;
@@ -31,7 +33,7 @@ public class LogSpawner : MonoBehaviour
 
             currentLog.GetComponent<LogManager>().setTexture(textureList[i%textureList.Length]);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(logSpawnInterval);
             i++;
 
         }

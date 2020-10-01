@@ -15,7 +15,6 @@ public class AnimationController : MonoBehaviour
 
     public void startAnimation()
     {
-        Debug.Log("Başlattım");
         anim.SetTrigger("Dump");
     }
 }
