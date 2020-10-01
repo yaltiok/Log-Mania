@@ -61,7 +61,7 @@ MonoBehaviour:
       color: {r: 1, g: 1, b: 1, a: 1}
       index: 0
     task: Build Hatch
-    isComplete: 0
+    isComplete: 1
   - owner:
       name: Normal
       color: {r: 1, g: 1, b: 1, a: 1}

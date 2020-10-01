@@ -7,12 +7,17 @@ public class LogManager : MonoBehaviour
 
     private float shapeWidth;
     private Vector3 offsetVector;
+    private LogMovement logMovement;
 
     public GameObject boundary;
 
     private void Start()
     {
+        logMovement = GetComponent<LogMovement>();
+
         shapeWidth = GetComponentInChildren<MeshRenderer>().bounds.size.x; /*GetComponent<MeshRenderer>().bounds.size.x;*/
+
+
         float offset = Random.Range(-boundary.transform.position.x + shapeWidth, boundary.transform.position.x - shapeWidth);
 
         int dir = Random.Range(0,2);
@@ -28,5 +33,12 @@ public class LogManager : MonoBehaviour
     public void setTexture(Texture texture)
     {
         GetComponentInChildren<Renderer>().material.SetTexture("_BaseMap", texture);
+    }
+    private void Update()
+    {
+        if (transform.position.z < 10f)
+        {
+            logMovement.setBounciness();
+        }
     }
 }

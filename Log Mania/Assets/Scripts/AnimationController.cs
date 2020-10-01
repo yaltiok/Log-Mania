@@ -5,10 +5,10 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
 
-    public Animator anim;
+    private Animator anim;
 
 
-    private void Start()
+    private void Awake()
     {
         anim = GetComponent<Animator>();
     }

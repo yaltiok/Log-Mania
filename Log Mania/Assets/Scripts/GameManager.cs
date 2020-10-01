@@ -7,14 +7,14 @@ public class GameManager : MonoBehaviour
 {
     public AnimationController animationController;
 
-    [SerializeField] private float hatchDumpInterval,initialWaitTime;
+    [SerializeField] private float hatchDumpInterval, initialWaitTime;
 
     private bool game;
 
 
     private void Start()
     {
-
+        startGame();
         StartCoroutine(WaitAndStart(initialWaitTime));
     }
 
