@@ -12,8 +12,8 @@ public class LogManager : MonoBehaviour
 
     private void Start()
     {
-        shapeWidth = GetComponent<MeshRenderer>().bounds.size.x;
-        float offset = Random.Range(-boundary.transform.position.x, boundary.transform.position.x);
+        shapeWidth = GetComponentInChildren<MeshRenderer>().bounds.size.x; /*GetComponent<MeshRenderer>().bounds.size.x;*/
+        float offset = Random.Range(-boundary.transform.position.x + shapeWidth, boundary.transform.position.x - shapeWidth);
 
         int dir = Random.Range(0,2);
 
@@ -22,5 +22,11 @@ public class LogManager : MonoBehaviour
         offsetVector = new Vector3(offset,0,0);
 
         transform.position += offsetVector;
+    }
+
+
+    public void setTexture(Texture texture)
+    {
+        GetComponentInChildren<Renderer>().material.SetTexture("_BaseMap", texture);
     }
 }

@@ -8,6 +8,7 @@ public class LogSpawner : MonoBehaviour
     private IEnumerator coroutine;
     public int logCount;
     public GameObject[] logList;
+    public Texture[] textureList;
 
     void Start()
     {
@@ -24,9 +25,11 @@ public class LogSpawner : MonoBehaviour
         while (i < logCount)
         {
             int index = Random.Range(0,logList.Length);
-            GameObject currentLog = logList[index];
+            GameObject logToSpawn = logList[index];
 
-            Instantiate(currentLog, transform.position, currentLog.transform.rotation, transform);
+            GameObject currentLog = Instantiate(logToSpawn, transform.position, logToSpawn.transform.rotation, transform);
+
+            currentLog.GetComponent<LogManager>().setTexture(textureList[i%textureList.Length]);
 
             yield return new WaitForSeconds(2f);
             i++;
