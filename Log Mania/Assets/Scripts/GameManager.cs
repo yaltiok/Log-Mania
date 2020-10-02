@@ -11,10 +11,14 @@ public class GameManager : MonoBehaviour
 
     private bool game;
 
+    private LogSpawner logSpawner;
+
 
     private void Start()
     {
         startGame();
+        logSpawner = FindObjectOfType<LogSpawner>();
+        logSpawner.endGameEvent += stopGame;
         StartCoroutine(WaitAndStart(initialWaitTime));
     }
 

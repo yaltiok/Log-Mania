@@ -18,7 +18,7 @@ public class Cut : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CuttingZone"))
         {
-            if (other.gameObject != null && other.transform.parent != null && other.transform.parent.transform.position.z > -1.5f)
+            if (other.gameObject != null && other.transform.parent != null && other.transform.parent.transform.position.z > 0.5f)
             {
 
 
@@ -84,15 +84,12 @@ public class Cut : MonoBehaviour
         componentSetup(lower, 2f);
 
 
-        //setPositions(gameObject, upper,lower, colPoint);
-
         Destroy(gameObject);
     }
 
     private SlicedHull EzySlice(GameObject gameObject, Vector3 colPoint, Material mat = null)
     {
         return gameObject.Slice(colPoint, Vector3.right, mat);
-        //return gameObject.SliceInstantiate(transform.position , Vector3.right);
     }
 
     private void componentSetup(GameObject gameObject, float velocity)
@@ -103,7 +100,7 @@ public class Cut : MonoBehaviour
         gameObject.layer = 12;
         Rigidbody rb = gameObject.AddComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
-        rb.AddExplosionForce(40f, gameObject.transform.position /*+ new Vector3(-0.5f, 0,  -0.5f)*/, 20f);
+        rb.AddExplosionForce(40f, gameObject.transform.position, 20f);
         rb.velocity += new Vector3(0,0,-velocity);
 
         StartCoroutine(WaitAndAddTorque(rb));

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,16 @@ public class LogSpawner : MonoBehaviour
     public GameObject[] logList;
     public Texture[] textureList;
 
+    //public delegate void EndGameDelegate();
+    //public EndGameDelegate endGameEvent;
+
+    public event Action endGameEvent;
+
     void Start()
     {
         coroutine = SpawnLogs(logCount);
 
-        StartCoroutine(coroutine);
+        startCoroutine();
     }
 
 
@@ -37,5 +43,23 @@ public class LogSpawner : MonoBehaviour
             i++;
 
         }
+        coroutine = WaitForSeconds();
+        startCoroutine();
+    }
+
+    private IEnumerator WaitForSeconds()
+    {
+        yield return new WaitForSeconds(4f);
+
+        if (endGameEvent != null)
+        {
+            endGameEvent();
+        }
+
+    }
+
+    private void startCoroutine()
+    {
+        StartCoroutine(coroutine);
     }
 }
