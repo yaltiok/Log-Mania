@@ -106,30 +106,14 @@ public class Cut : MonoBehaviour
         rb.AddExplosionForce(40f, gameObject.transform.position /*+ new Vector3(-0.5f, 0,  -0.5f)*/, 20f);
         rb.velocity += new Vector3(0,0,-velocity);
 
-        StartCoroutine(WaitForSeconds(rb));
+        StartCoroutine(WaitAndAddTorque(rb));
 
 
 
     }
 
-    private void setPositions(GameObject original, GameObject u, GameObject l, Vector3 colPoint)
-    {
-        //u.transform.position.Set(u.transform.position.x, original.transform.position.y, u.transform.position.z);
-        //l.transform.position.Set(l.transform.position.x, original.transform.position.y, l.transform.position.z);
 
-        //l.transform.position = new Vector3(l.transform.position.x, original.transform.position.y, l.transform.position.z);
-
-        //float uWidth = u.transform.lossyScale.x;    //u.transform.GetComponent<MeshRenderer>().bounds.size.x;
-        //float lWidth = l.transform.GetComponent<MeshRenderer>().bounds.size.x;
-
-        print(colPoint + " " + u.transform.position + " " + l.transform.position);
-        u.transform.position = new Vector3(colPoint.x + u.transform.position.x, original.transform.position.y, colPoint.z);
-        l.transform.position = new Vector3(colPoint.x - l.transform.position.x, original.transform.position.y, colPoint.z);
-    }
-
-
-
-    IEnumerator WaitForSeconds(Rigidbody rb)
+    IEnumerator WaitAndAddTorque(Rigidbody rb)
     {
         yield return new WaitForSeconds(0.25f);
         float a = Random.Range(-75f, 75f);
