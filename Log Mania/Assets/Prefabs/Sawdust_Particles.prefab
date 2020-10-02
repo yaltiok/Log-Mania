@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447479465578088502}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447479465578088502}
   serializedVersion: 6
-  lengthInSec: 1.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -175,7 +175,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.13114548
+          value: 0.39344025
           inSlope: 2
           outSlope: 2
           tangentMode: 0
@@ -184,7 +184,7 @@ ParticleSystem:
           outWeight: 0
         - serializedVersion: 3
           time: 0.32382715
-          value: 0.5409851
+          value: 0.8688545
           inSlope: 1.3715795
           outSlope: 1.3715795
           tangentMode: 0
@@ -192,8 +192,8 @@ ParticleSystem:
           inWeight: 0.28869495
           outWeight: 0.16099297
         - serializedVersion: 3
-          time: 0.6555038
-          value: 0.70492196
+          time: 0.6721664
+          value: 0.9344294
           inSlope: -4.243054
           outSlope: -4.243054
           tangentMode: 0
@@ -201,13 +201,13 @@ ParticleSystem:
           inWeight: 0.365743
           outWeight: 0.23276073
         - serializedVersion: 3
-          time: 0.9874878
-          value: -0.5081978
-          inSlope: 0
-          outSlope: 0
+          time: 0.9916382
+          value: -0.2458992
+          inSlope: -3.93552
+          outSlope: -3.93552
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.31292778
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -249,7 +249,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9433962, g: 0.874491, b: 0.5918476, a: 1}
+      maxColor: {r: 0.41960785, g: 0.24705882, b: 0.050980393, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8406,7 +8406,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 0

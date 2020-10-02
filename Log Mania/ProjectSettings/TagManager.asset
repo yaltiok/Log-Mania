@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CuttingZone
   - DeathTrigger
+  - Cloud
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Log
   - CuttingZone
   - Spawner
-  - 
+  - Cut
   - 
   - 
   - 

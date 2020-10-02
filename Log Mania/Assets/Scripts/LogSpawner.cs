@@ -29,7 +29,7 @@ public class LogSpawner : MonoBehaviour
             int index = Random.Range(0,logList.Length);
             GameObject logToSpawn = logList[index];
 
-            GameObject currentLog = Instantiate(logToSpawn, transform.position, logToSpawn.transform.rotation, transform);
+            GameObject currentLog = Instantiate(logToSpawn, transform.position, logToSpawn.transform.rotation);
 
             currentLog.GetComponent<LogManager>().setTexture(textureList[i%textureList.Length]);
 

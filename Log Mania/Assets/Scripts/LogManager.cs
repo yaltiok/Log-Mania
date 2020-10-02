@@ -18,11 +18,11 @@ public class LogManager : MonoBehaviour
         shapeWidth = GetComponentInChildren<MeshRenderer>().bounds.size.x; /*GetComponent<MeshRenderer>().bounds.size.x;*/
 
 
-        float offset = Random.Range(-boundary.transform.position.x + shapeWidth, boundary.transform.position.x - shapeWidth);
+        float offset = Random.Range(-boundary.transform.position.x + shapeWidth * 0.5f, boundary.transform.position.x - shapeWidth * .5f);
 
-        int dir = Random.Range(0,2);
+        //int dir = Random.Range(0,2);
 
-        transform.Rotate(dir * 180f, 0, 0);
+        //transform.Rotate(0, dir * 180f, 0);
 
         offsetVector = new Vector3(offset,0,0);
 
@@ -34,6 +34,7 @@ public class LogManager : MonoBehaviour
     {
         GetComponentInChildren<Renderer>().material.SetTexture("_BaseMap", texture);
     }
+
     private void Update()
     {
         if (transform.position.z < 10f)
@@ -41,4 +42,5 @@ public class LogManager : MonoBehaviour
             logMovement.setBounciness();
         }
     }
+    
 }
