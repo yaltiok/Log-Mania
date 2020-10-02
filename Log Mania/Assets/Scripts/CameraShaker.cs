@@ -30,6 +30,7 @@ public class CameraShaker : MonoBehaviour
 
     public void shakeCamera()
     {
+        Handheld.Vibrate();
         StartCoroutine(Shake(cameraShakeStrength,cameraShakeDuration));
     }
 }
