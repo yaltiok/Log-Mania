@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraShaker : MonoBehaviour
 {
-    public IEnumerator Shake(float duration, float strength) 
+
+    [SerializeField] private float cameraShakeStrength, cameraShakeDuration;
+    private IEnumerator Shake(float duration, float strength) 
     {
         Vector3 startingPos = transform.localPosition;
 
@@ -24,5 +26,10 @@ public class CameraShaker : MonoBehaviour
 
         transform.localPosition = startingPos;
 
+    }
+
+    public void shakeCamera()
+    {
+        StartCoroutine(Shake(cameraShakeStrength,cameraShakeDuration));
     }
 }

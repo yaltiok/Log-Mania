@@ -13,9 +13,6 @@ public class LogSpawner : MonoBehaviour
     public GameObject[] logList;
     public Texture[] textureList;
 
-    //public delegate void EndGameDelegate();
-    //public EndGameDelegate endGameEvent;
-
     public event Action endGameEvent;
 
     void Start()
@@ -32,7 +29,7 @@ public class LogSpawner : MonoBehaviour
         int i = 0;
         while (i < logCount)
         {
-            int index = Random.Range(0,logList.Length);
+            int index = UnityEngine.Random.Range(0,logList.Length);
             GameObject logToSpawn = logList[index];
 
             GameObject currentLog = Instantiate(logToSpawn, transform.position, logToSpawn.transform.rotation);
@@ -49,7 +46,7 @@ public class LogSpawner : MonoBehaviour
 
     private IEnumerator WaitForSeconds()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(4.3f);
 
         if (endGameEvent != null)
         {

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public AnimationController animationController;
+    [SerializeField] private GameObject endGamePanel;
 
     [SerializeField] private float hatchDumpInterval, initialWaitTime;
 
@@ -41,11 +42,13 @@ public class GameManager : MonoBehaviour
 
     public void stopGame()
     {
+        endGamePanel.SetActive(true);
         game = false;
     }
 
     public void startGame()
     {
+        endGamePanel.SetActive(false);
         game = true;
     }
 

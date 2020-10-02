@@ -22,9 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        followMouse();
-    }
+        if (Input.GetMouseButton(0))
+        {
+            followMouse();
+        }
 
+    }
 
 
     private void initBoundaries()

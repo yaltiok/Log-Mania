@@ -1250,7 +1250,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.733116e+22, y: 1.1865871e+27, z: 7.146321e+22, w: 4.861348e+30}
+  m_BoundingSphereOverride: {x: 0, y: 1, z: 1e-44, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1774,6 +1774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f1f1a7026e6f84d902097777ed1cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShakeStrength: 0.5
+  cameraShakeDuration: 0.2
 --- !u!4 &995075774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477858, guid: 107cc8771223daf48be99527559937ff,
@@ -2522,6 +2524,11 @@ MonoBehaviour:
   logCount: 10
   logList:
   - {fileID: 3570620056547543257, guid: db90a7d1820574e48867d32e47cacece, type: 3}
+  - {fileID: 3570620056547543257, guid: 220f9ca9e0cd3514d97a4bb2f10ee07b, type: 3}
+  - {fileID: 3570620056547543257, guid: b7ae9ae145f33234f9244fe6361a22f6, type: 3}
+  - {fileID: 3570620056547543257, guid: a41e8b368b5087849a8e86c5b843a250, type: 3}
+  - {fileID: 3570620056547543257, guid: 181ef498c1f42d94d86d0488255457a3, type: 3}
+  - {fileID: 3570620056547543257, guid: 2904f60527be49f48a7b8c8e6555619f, type: 3}
   textureList:
   - {fileID: 2800000, guid: e494ca42918df428483469f4af6f6515, type: 3}
   - {fileID: 2800000, guid: 062ec8036740f45d9a86df9a62fadcb5, type: 3}
@@ -3703,6 +3710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationController: {fileID: 1044352169}
+  endGamePanel: {fileID: 2143404148}
   hatchDumpInterval: 6
   initialWaitTime: 5
 --- !u!4 &2114348488
@@ -3840,7 +3848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.65882355}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
