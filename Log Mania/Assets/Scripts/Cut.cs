@@ -14,7 +14,7 @@ public class Cut : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CuttingZone"))
         {
-            if (other.gameObject != null && other.transform.parent != null && other.transform.parent.transform.position.z > 0.5f)
+            if (other.gameObject != null && other.transform.parent != null && other.transform.parent.transform.position.z > -1.5f)
             {
                 other.isTrigger = true;
                 Material mat = other.transform.parent.GetComponent<Renderer>().material;
@@ -34,11 +34,26 @@ public class Cut : MonoBehaviour
         SlicedHull slicedObject = EzySlice(gameObject, colPoint, mat);
         SlicedHull slicedChild = EzySlice(child, colPoint,mat);
 
-        GameObject upper = slicedObject.CreateUpperHull(gameObject, mat);
-        GameObject lower = slicedObject.CreateLowerHull(gameObject, mat);
+        GameObject upper;
+        GameObject lower;
+        GameObject upperChild;
+        GameObject lowerChild;
+        try
+        {
+            upper = slicedObject.CreateUpperHull(gameObject, mat);
+            lower = slicedObject.CreateLowerHull(gameObject, mat);
 
-        GameObject upperChild = slicedChild.CreateUpperHull(child, mat);
-        GameObject lowerChild = slicedChild.CreateLowerHull(child, mat);
+            upperChild = slicedChild.CreateUpperHull(child, mat);
+            lowerChild = slicedChild.CreateLowerHull(child, mat);
+        }
+        catch (System.Exception)
+        {
+            Destroy(slicedObject.upperHull);
+            Destroy(slicedObject.lowerHull);
+            return;
+        }
+        
+
 
         transformSetup(gameObject, child, upper, lower, upperChild, lowerChild);
 
